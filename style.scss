@@ -1,0 +1,110 @@
+//variables
+
+$Bright-orange: hsl(31, 77%, 52%);
+$Dark-cyan: hsl(184, 100%, 22%);
+$Very-dark-cyan: hsl(179, 100%, 13%);
+
+//reset
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(250, 235, 215);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//
+
+.card-component {
+  display: flex;
+  border-radius: 0.5rem;
+  width: 60%;
+  overflow: hidden;
+}
+
+.column {
+  padding: 3rem;
+  & > h1 {
+    margin-bottom: 2rem;
+    color: hsl(0, 0%, 95%);
+    font-family: "Big Shoulders Display", cursive;
+    font-size: 2rem;
+  }
+  & > p {
+    margin-bottom: 4rem;
+    color: hsla(0, 0%, 100%, 0.75);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: smaller;
+    line-height: 1.6;
+  }
+}
+
+.col-1 {
+  background-color: $Bright-orange;
+  & > .btn:hover {
+    color: $Bright-orange;
+  }
+}
+
+.col-2 {
+  background-color: $Dark-cyan;
+  & > .btn:hover {
+    color: $Dark-cyan;
+  }
+}
+
+.col-3 {
+  background-color: $Very-dark-cyan;
+  & > .btn:hover {
+    color: $Very-dark-cyan;
+  }
+}
+
+.column-icon {
+  margin-bottom: 2rem;
+}
+
+.btn {
+  font-family: "Lexend Deca", sans-serif;
+  padding: 0.7rem 1.5rem;
+  background-color: inherit;
+  border: 2px solid hsl(0, 0%, 95%);
+  color: hsl(0, 0%, 95%);
+  border-radius: 2rem;
+  transition: all 0.5s;
+  &:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 95%);
+  }
+}
+
+//media
+
+@media screen and (max-width: 1100px) {
+  .card-component {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card-component {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card-component {
+    flex-direction: column;
+    margin: 2rem;
+  }
+  .column > p {
+    font-size: large;
+  }
+}
